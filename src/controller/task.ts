@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { NotFoundError, ServerError } from "src/core/errors";
+import { NotFoundError, ServerError } from "../core/errors";
 import { Controller, controllerWrapper } from "../core/controller";
 import TaskService from "../service/task";
 
