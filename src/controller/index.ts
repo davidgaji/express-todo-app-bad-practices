@@ -1,1 +1,3 @@
-export * from "./task";
+import TaskController from "./task";
+
+export { TaskController };
