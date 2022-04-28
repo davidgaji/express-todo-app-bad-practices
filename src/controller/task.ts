@@ -3,11 +3,6 @@ import { NotFoundError, ServerError } from "src/core/errors";
 import { Controller, controllerWrapper } from "../core/controller";
 import TaskService from "../service/task";
 
-const getAllTasks: Controller = (req) => ({
-  code: StatusCodes.OK,
-  value: TaskService.getAllTasks(),
-});
-
 const throwIfNotFound =
   (controller: Controller): Controller =>
   (req) => {
@@ -20,17 +15,22 @@ const throwIfNotFound =
     }
   };
 
-const createTask = throwIfNotFound((req) => ({
+export const getAllTasks: Controller = (req) => ({
+  code: StatusCodes.OK,
+  value: TaskService.getAllTasks(),
+});
+
+export const createTask = throwIfNotFound((req) => ({
   code: StatusCodes.CREATED,
   value: TaskService.createTask(req.body),
 }));
 
-const deleteTask: Controller = throwIfNotFound((req) => ({
+export const deleteTask: Controller = throwIfNotFound((req) => ({
   code: StatusCodes.OK,
   value: TaskService.deleteTask(Number(req.params.id)),
 }));
 
-const updateTask: Controller = throwIfNotFound((req) => ({
+export const updateTask: Controller = throwIfNotFound((req) => ({
   code: StatusCodes.OK,
   value: TaskService.modifiyTask(req.body),
 }));
