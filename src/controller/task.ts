@@ -1,15 +1,16 @@
-import { Controller, controllerWrapper } from "src/core/controller";
-const getAllTasksHandler: Controller = (req) => {};
+import { Controller, controllerWrapper } from "../core/controller";
 
-const createTaskHandler: Controller = (req) => {};
+const getAllTasks: Controller = (req) => {};
 
-const deleteTaskHandler: Controller = (req) => {};
+const createTask: Controller = (req) => {};
 
-const updateTaskHandler: Controller = (req) => {};
+const deleteTask: Controller = (req) => {};
 
-export class TaskController {
-  static getAllTasks = controllerWrapper(getAllTasksHandler);
-  static createTask = controllerWrapper(createTaskHandler);
-  static deleteTask = controllerWrapper(deleteTaskHandler);
-  static updateTask = controllerWrapper(updateTaskHandler);
-}
+const updateTask: Controller = (req) => {};
+
+export default {
+  getAllTasks,
+  createTask,
+  deleteTask,
+  updateTask,
+};

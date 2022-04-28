@@ -1,1 +1,3 @@
-export * from "./task";
+import TaskModel from "./task";
+
+export { TaskModel };

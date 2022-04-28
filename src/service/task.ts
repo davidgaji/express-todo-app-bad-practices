@@ -1,4 +1,6 @@
-import { Task, TaskModel } from "src/model";
+import { Task } from "../model/task";
+import { TaskModel } from "../model";
+import { NotFoundError } from "../core/errors";
 
 export const getAllTasks = () => TaskModel.findAll();
 
@@ -19,7 +21,7 @@ export const modifiyTask = (newTask: Task) => {
   return newTask;
 };
 
-export const TaskService = {
+export default {
   getAllTasks,
   createTask,
   deleteTask,

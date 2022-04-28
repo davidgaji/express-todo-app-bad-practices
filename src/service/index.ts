@@ -1,1 +1,3 @@
-export * from "./task";
+import TaskService from "./task";
+
+export { TaskService };

@@ -22,16 +22,16 @@ const modifyTask = (task: Task) => {
 const findByIndex = (searchIndex?: number) =>
   TodoItems.find(({ index }) => index === searchIndex);
 
-const find = () => [...TodoItems];
+const findAll = () => [...TodoItems];
 
 insertTask({ value: "learn react", done: false });
 insertTask({ value: "Go shopping", done: true });
 insertTask({ value: "buy flowers", done: true });
 
-export const TaskModel = {
+export default {
   insertTask,
   deleteTask,
   modifyTask,
   findByIndex,
-  findAll: find,
+  findAll,
 };

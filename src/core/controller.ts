@@ -6,11 +6,6 @@ export type ServerResult = {
   value: any;
 };
 
-export type ServerError = {
-  code: StatusCodes;
-  message: string;
-};
-
 export type Controller = (req: Request) => ServerResult;
 
 export const controllerWrapper =
