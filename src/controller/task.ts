@@ -32,7 +32,7 @@ export const deleteTask: Controller = throwIfNotFound((req) => ({
 
 export const updateTask: Controller = throwIfNotFound((req) => ({
   code: StatusCodes.OK,
-  value: TaskService.modifiyTask(req.body),
+  value: TaskService.modifiyTask({ ...req.body, index: Number(req.params.id) }),
 }));
 
 export default {

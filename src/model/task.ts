@@ -11,7 +11,7 @@ const insertTask = (task: Omit<Task, "index">) => {
 };
 
 const deleteTask = (toDeleteIndex: number) => {
-  TodoItems = TodoItems.filter(({ index }) => index === toDeleteIndex);
+  TodoItems = TodoItems.filter(({ index }) => index !== toDeleteIndex);
 };
 
 const modifyTask = (task: Task) => {
